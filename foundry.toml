@@ -11,4 +11,7 @@ solc = "0.8.30"
 viaIR = true
 gas_reports = ["*"]
 
+[lint]
+exclude_lints = ["mixed-case-function"]
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

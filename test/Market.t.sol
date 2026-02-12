@@ -84,15 +84,16 @@ contract InsufficientBurnCallback {
         uint256 liquidity1Short
     ) external {
         // Burns less than requested, causing withdrawLiquidity to fail
-        ILiquidity(address(market)).transferFrom(
-            msg.sender,
-            address(0),
-            pairId,
-            uint128(liquidity0Long / 2), // Burn only half
-            uint128(liquidity0Short / 2),
-            uint128(liquidity1Long / 2),
-            uint128(liquidity1Short / 2)
-        );
+        ILiquidity(address(market))
+            .transferFrom(
+                msg.sender,
+                address(0),
+                pairId,
+                uint128(liquidity0Long / 2), // Burn only half
+                uint128(liquidity0Short / 2),
+                uint128(liquidity1Long / 2),
+                uint128(liquidity1Short / 2)
+            );
     }
 
     function requestToken(address, address[] memory, uint256[] memory) external {}

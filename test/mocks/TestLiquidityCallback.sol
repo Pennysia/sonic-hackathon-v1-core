@@ -47,9 +47,8 @@ contract TestLiquidityCallback is IPayment {
         console.log("allowance >= block.timestamp:", allowance >= block.timestamp);
 
         console.log("About to call transferFrom...");
-        ILiquidity(address(market)).transferFrom(
-            lpOwner, address(0), poolId, amountForLongX, amountForShortX, amountForLongY, amountForShortY
-        );
+        ILiquidity(address(market))
+            .transferFrom(lpOwner, address(0), poolId, amountForLongX, amountForShortX, amountForLongY, amountForShortY);
         console.log("transferFrom completed successfully");
     }
 
@@ -58,7 +57,11 @@ contract TestLiquidityCallback is IPayment {
         /*_to*/
         address[] memory tokens,
         uint256[] memory amounts
-    ) external payable override {
+    )
+        external
+        payable
+        override
+    {
         // Transfer tokens to the market contract
         for (uint256 i = 0; i < tokens.length; i++) {
             IERC20(tokens[i]).transfer(address(market), amounts[i]);

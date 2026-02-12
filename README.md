@@ -4,6 +4,10 @@
 
 An innovative Automated Market Maker (AMM) protocol featuring a unique **long/short liquidity model** for enhanced capital efficiency and liquidity provider incentives.
 
+## ⚠️ Repository Status & Safety Notice
+
+This repository is archived. The code was created solely to compete in the Sonic hackathon in August 2026. It has **not** undergone any security audits and may contain serious bugs or vulnerabilities. **Do not use this code in production or to secure real funds.**
+
 This codebase implements a sophisticated AMM with position-based fee mechanics featuring a unique **long/short liquidity model**, aiming for better LP incentives (e.g., choose "long" for fee capture in output-heavy pairs).
 
 ## 🌟 Innovation: Long/Short Liquidity Model

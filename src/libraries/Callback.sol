@@ -10,9 +10,9 @@ library Callback {
     function tokenCallback(
         address caller,
         address payer,
-        address[] memory tokens,
-        uint256[] memory balancesBefore,
-        uint256[] memory paybackAmounts
+        address[] calldata tokens,
+        uint256[] calldata balancesBefore,
+        uint256[] calldata paybackAmounts
     ) internal {
         uint256 len = tokens.length;
         IPayment(caller).requestToken(payer, tokens, paybackAmounts); // user paybacks

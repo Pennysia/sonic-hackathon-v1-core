@@ -20,8 +20,9 @@ contract ValidationTest is Test {
 
         bool reverted = false;
         try this.callCheckTokenOrder(token0, token1) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "checkTokenOrder should revert when token0 >= token1");
@@ -32,8 +33,9 @@ contract ValidationTest is Test {
 
         bool reverted = false;
         try this.callCheckTokenOrder(token, token) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "checkTokenOrder should revert when tokens are equal");
@@ -47,8 +49,9 @@ contract ValidationTest is Test {
             // Should revert
             bool reverted = false;
             try this.callCheckTokenOrder(token0, token1) {
-                // Should not reach here
-            } catch {
+            // Should not reach here
+            }
+            catch {
                 reverted = true;
             }
             assertTrue(reverted, "checkTokenOrder should revert when token0 >= token1");
@@ -69,8 +72,9 @@ contract ValidationTest is Test {
     function test_EqualLengthsRevertsOnMismatch() public view {
         bool reverted = false;
         try this.callEqualLengths(5, 3) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "equalLengths should revert on length mismatch");
@@ -84,8 +88,9 @@ contract ValidationTest is Test {
             // Should revert
             bool reverted = false;
             try this.callEqualLengths(length0, length1) {
-                // Should not reach here
-            } catch {
+            // Should not reach here
+            }
+            catch {
                 reverted = true;
             }
             assertTrue(reverted, "equalLengths should revert on length mismatch");
@@ -105,8 +110,9 @@ contract ValidationTest is Test {
     function test_NotThisRevertsOnSelfAddress() public view {
         bool reverted = false;
         try this.callNotThis(address(this)) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "notThis should revert when input is address(this)");
@@ -120,8 +126,9 @@ contract ValidationTest is Test {
             // Should revert
             bool reverted = false;
             try this.callNotThis(input) {
-                // Should not reach here
-            } catch {
+            // Should not reach here
+            }
+            catch {
                 reverted = true;
             }
             assertTrue(reverted, "notThis should revert when input is address(this)");
@@ -142,8 +149,9 @@ contract ValidationTest is Test {
     function test_NotZeroRevertsOnZero() public view {
         bool reverted = false;
         try this.callNotZero(0) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "notZero should revert when input is 0");
@@ -157,8 +165,9 @@ contract ValidationTest is Test {
             // Should revert
             bool reverted = false;
             try this.callNotZero(input) {
-                // Should not reach here
-            } catch {
+            // Should not reach here
+            }
+            catch {
                 reverted = true;
             }
             assertTrue(reverted, "notZero should revert when input is 0");

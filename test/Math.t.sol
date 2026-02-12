@@ -24,8 +24,9 @@ contract MathTest is Test {
         // Test that fullMulDiv reverts on zero denominator
         bool reverted = false;
         try this.callFullMulDiv(100, 200, 0) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "fullMulDiv should revert on zero denominator");
@@ -39,8 +40,9 @@ contract MathTest is Test {
         // Test overflow scenario
         bool reverted = false;
         try this.callFullMulDiv(type(uint256).max, type(uint256).max, 1) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "fullMulDiv should revert on overflow");
@@ -76,8 +78,9 @@ contract MathTest is Test {
     function test_FullMulDivUpRevertsOnZeroDenominator() public view {
         bool reverted = false;
         try this.callFullMulDivUp(100, 200, 0) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "fullMulDivUp should revert on zero denominator");
@@ -122,8 +125,9 @@ contract MathTest is Test {
     function test_DivUpRevertsOnZeroDenominator() public view {
         bool reverted = false;
         try this.callDivUp(100, 0) {
-            // Should not reach here
-        } catch {
+        // Should not reach here
+        }
+        catch {
             reverted = true;
         }
         assertTrue(reverted, "divUp should revert on zero denominator");
